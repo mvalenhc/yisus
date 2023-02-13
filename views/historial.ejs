@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="http://localhost:4000/css/historial.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <title>Historial</title>
+</head>
+<body>
+    <div class="container">
+    <nav class="links">
+    </nav><br><br>
+    <h1>Historial</h1>
+    <table id="persona" class="table table-bordered table-striped text-center mt-4">
+        <thead>
+            <tr class="text-white" style="background-color:#f9004d;">
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Documento</th>            
+            <th scope="col">Email</th>    
+            <th scope="col">Ficha</th>
+            <th scope="col">Fecha de Entrada</th>
+            <th scope="col">Fecha de Salida</th>
+            <th scope="col">Accion</th>        
+            </tr>
+        </thead>
+        <!-- <tbody>       
+        </tbody> -->
+    </table>
+    <br><br>
+
+    <a onclick="location.href='/IngressCloud'" href="#" class="nav_Items Nav_Items--cta">Inicio</a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>  
+    <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap5.min.js"></script>        
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script>
+    $('#persona').DataTable({    
+        ajax: {
+            url: "/data",
+            dataSrc: ""
+        },   
+        columns: [
+            {"data": "nombre"},        
+            {'data': 'apellidos'},
+            {'data': 'documento'},
+            {'data': 'email'},
+            {'data': 'ficha'},
+            {'data': 'fechaentrada'},
+            {'data': 'fechasalida'},    
+            {"data": null,
+                "render": function (data) { 
+                    return '<a href="/modificar/'+data.idpersona+ '"class="btn btn-info"><i class="fas fa-edit"></i></a><a onclick="confirmar('+data.idpersona+')" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>'                           
+                    }
+            }
+        ],
+        pageLength : 5,
+        lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 'Todos']]    
+    });
+
+    
+    function confirmar(idpersona) {
+    Swal.fire({
+        title: '¿Confirma eliminar el registro: '+idpersona+'?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#6c757d',
+        confirmButtonText: 'Confirmar'
+        }).then((result) => {
+        if (result.isConfirmed) {   
+            window.location = '/delete/'+idpersona;                              
+        }
+    });
+    };
+    </script>
+
+    <script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+</div>
+</body>
+</html>

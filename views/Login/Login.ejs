@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IngressCloud-Registro</title>
+    <!-- <link rel="stylesheet" href="/css/estilo.css"> -->
+</head>
+<body>
+    <header class="inicio">
+        <div class="container" id="inicio">
+            <nav class="links">
+                <a onclick="location.href='/IngressCloud'" href="#" class="nav_Items Nav_Items--cta">Inicio</a>
+            </nav>
+        </div>
+        <form action="/save1" method="POST" id="form">
+        <div class="form">
+            <h1>Nuevo usuario</h1><br><br>
+            </div>
+            <div class="grupo">
+            <input type="text" name="nombre" id="nombre" required><span class="barra"></span>
+            <label for="">Nombre</label>
+            </div>
+            <div class="grupo">
+                <input type="text" name="apellidos" id="apellidos" required><span class="barra"></span>
+                <label for="">Apellidos</label>
+            </div>
+            <div class="grupo">
+                <input type="number" name="documento" id="documento" required><span class="barra"></span>
+                <label for="">Documento</label>
+            </div>
+            <div class="grupo">
+                <input type="email" name="email" id="email" required><span class="barra"></span>
+                <label for="">Correo</label>
+            </div>
+            <div class="grupo">
+                <input type="number" name="ficha" id="ficha" required><span class="barra"></span>
+                <label for="">Ficha</label>
+            </div>
+            <button type="submit">Crear</button>
+        </div>
+    </form>
+    </header>
+</body>
+</html>
