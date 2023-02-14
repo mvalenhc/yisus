@@ -1,23 +1,15 @@
-const express = require('express');
+const express = require("express");
 const app = express();
-//app.use(express.static('public'))
 
-// app.use("/resources", express.static("public"));
-app.use("/resources", express.static(__dirname + "/public"));
+// Static Files
+app.use("/assets", express.static(__dirname + "/public"));
 
 //4- Estableciendo el motor de plantillas
-app.set('view engine','ejs');
+app.set("view engine", "ejs");
 
-//Para poder capturar los datos del formulario (sin urlencoded nos devuelve "undefined")
-app.use(express.urlencoded({extended:false}));
-//además le decimos a express que vamos a usar json
-app.use(express.json());
+//Establecemos las rutas para las VISTAS usando un archivo aparte (router.js) y la clase Router()
+app.use("/", require("./router"));
 
-
- //Establecemos las rutas para las VISTAS usando un archivo aparte (router.js) y la clase Router()
-app.use('/', require('./router'));
-
-
-app.listen(4000, ()=>{
-    console.log('SERVER corriendo en http://localhost:4000');
+app.listen(4000, () => {
+  console.log("server: http://localhost:5000");
 });

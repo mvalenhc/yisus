@@ -1,52 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/resources/boostrap/bootstrap.min.css">
-    <script src="/resources/boostrap/"></script>
-    <script src="/resources/boostrap/"></script>
-    <script src="/resources/boostrap/"></script>
-    <title>Inicio de sesion - IngressCloud</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <%- include('./partials/boostrap') %>
+    <title>Home Page</title>
 </head>
 
 <body>
-    <!-- <header class="inicio">
-        <form action="/save10" method="POST" id="form">
-        <div class="form">
-            <h1>Inicia sesión</h1><br><br>
-            </div>
-            <div class="grupo">
-                <input type="email" name="email" id="email" required><span class="barra"></span>
-                <label for="">Correo</label>
-            </div>
-            <div class="grupo">
-            <input type="text" name="password" id="password" required><span class="barra"></span>
-            <label for="">Contraseña</label>
-            </div>
-            <button type="submit">Crear</button>
-        </div>
-    </form>
-    </header> -->
-
-    <form>
-        <div class="form-group">
-          <label for="exampleInputEmail1">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-        </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1">
-        </div>
-        <div class="form-group form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
+  <%- include('./partials/card-working.ejs') %>
 </body>
-
 
 </html>
