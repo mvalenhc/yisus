@@ -9,6 +9,10 @@ router.get('/login',(req,res)=>{
     res.render('login.ejs')
 })
 
+router.get('/auth',(req,res)=>{
+    res.render('auth.ejs')
+})
+
 router.use((req,res)=>{
     res.send(`<h1> Page not found </h1>`);
 })
