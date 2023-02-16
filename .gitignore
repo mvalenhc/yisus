@@ -1,1 +1,5 @@
+# Folders ignored
 node_modules
+
+# Extensions ignored
+.env

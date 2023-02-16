@@ -16,6 +16,7 @@ A library management system built using Node.js and Express.
 ## Technology Stack
 * Node.js
 * Express
+* dotenv
 * EJS
 * SQL
 * Bootstrap for styling
