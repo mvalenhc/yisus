@@ -15,6 +15,14 @@ router.get('/login',(req,res)=>{
 router.get('/auth',(req,res)=>{
     res.render('auth.ejs')
 })
+//Ruta para la pagina principal
+router.get('/pagina',(req,res)=>{
+    res.render('pagina.ejs')
+})
+
+router.get('/',(req,res)=>{
+    res.render('')
+})
 
 // Ruta por defecto al ingresar una ruta desconocida
 router.use((req,res)=>{

@@ -7,11 +7,109 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- boostrap -->
   <%- include('./partials/boostrap') %>
-    <title>Home Page</title>
+
+  <%- include('./partials/card-working.ejs') %>
 </head>
+          <title>Home Page</title>
 
 <body>
-  <%- include('./partials/card-working.ejs') %>
-</body>
 
+  <main>
+    <label class="category-title text-uppercase m-3 p-2">añadidos recientemente</label>
+    <article class="owl-carousel">
+
+
+      <figure class="item text-center">
+        <a href="#"><img src="/assets/img/a-dos-metros-de-ti.png" class="img-thumbnail" alt="book-name"></a>
+        <figcaption class="figure-caption">A dos metros de ti</figcaption>
+      </figure>
+      <figure class="item text-center">
+        <a href="#"><img src="/assets/img/atlantis.png" class="img-thumbnail" alt="book-name"></a>
+        <figcaption class="figure-caption">Atlantis: Proyecto tarsis</figcaption>
+      </figure>
+      <figure class="item text-center">
+        <a href="#"><img src="/assets/img/fool-man.png" class="img-thumbnail" alt="book-name"></a>
+        <figcaption class="figure-caption">Fool man</figcaption>
+      </figure>
+      <figure class="item text-center">
+        <a href="#"><img src="/assets/img/lasciva.png" class="img-thumbnail" alt="book-name"></a>
+        <figcaption class="figure-caption">Lasciva</figcaption>
+      </figure>
+      <figure class="item text-center">
+        <a href="#"><img src="/assets/img/naranja-mecanica.png" class="img-thumbnail" alt="book-name"></a>
+        <figcaption class="figure-caption">La naranja mecanica</figcaption>
+      </figure>
+      <figure class="item text-center">
+        <a href="#"><img src="/assets/img/navaja-antigua.png" class="img-thumbnail" alt="book-name"></a>
+        <figcaption class="figure-caption">Navaja antigua</figcaption>
+      </figure>
+
+    </article>
+
+    <label class="category-title text-uppercase m-3 p-2 ">recomendaciones</label>
+    <article class="owl-carousel">
+
+      <figure class="item text-center">
+        <a href="#"><img src="/assets/img/a-dos-metros-de-ti.png" class="img-thumbnail" alt="book-name"></a>
+        <figcaption class="figure-caption">A dos metros de ti</figcaption>
+      </figure>
+      <figure class="item text-center">
+        <a href="#"><img src="/assets/img/atlantis.png" class="img-thumbnail" alt="book-name"></a>
+        <figcaption class="figure-caption">Atlantis: Proyecto tarsis</figcaption>
+      </figure>
+      <figure class="item text-center">
+        <a href="#"><img src="/assets/img/fool-man.png" class="img-thumbnail" alt="book-name"></a>
+        <figcaption class="figure-caption">Fool man</figcaption>
+      </figure>
+      <figure class="item text-center">
+        <a href="#"><img src="/assets/img/lasciva.png" class="img-thumbnail" alt="book-name"></a>
+        <figcaption class="figure-caption">Lasciva</figcaption>
+      </figure>
+      <figure class="item text-center">
+        <a href="#"><img src="/assets/img/naranja-mecanica.png" class="img-thumbnail" alt="book-name"></a>
+        <figcaption class="figure-caption">La naranja mecanica</figcaption>
+      </figure>
+      <figure class="item text-center">
+        <a href="#"><img src="/assets/img/navaja-antigua.png" class="img-thumbnail" alt="book-name"></a>
+        <figcaption class="figure-caption">Navaja antigua</figcaption>
+      </figure>
+
+    </article>
+
+  </main>
+
+  <script>
+    // activacion de la libreria
+    $('.owl-carousel').owlCarousel({
+      loop: true,
+      margin: 15,
+      autoWidth: true,
+      // nav: true,
+      responsive: {
+        0: {
+          items: 2
+        },
+        600: {
+          items: 4
+        },
+        1000: {
+          items: 6
+        }
+      }
+    })
+  </script>
+
+  <style>
+    /* * estilos de */
+    .category-title {
+      border: 2px solid black;
+    }
+
+    .item {
+      /* background-color: blueviolet; */
+      width: 10rem;
+    }
+      </style>
+
+  </body>
 </html>
