@@ -23,6 +23,20 @@ body{
     font-size: 20px;
     text-decoration: solid white;
 }
+
+.login{
+   
+    font-size: 25px;
+    color: #000000;
+    text-decoration: none;
+    font-family: 'Josefin Sans', sans-serif;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 8px;
+    background-color: #66a7aa;
+}
+
 .nombre{
     font-size: 25px;
     flex: content;
@@ -122,15 +136,5 @@ body{
     margin: 2em auto 3em; /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
    }
 
-
-   /* * estilos de */
-.category-title {
-    border: 2px solid black;
-  }
-
-.item {
-    /* background-color: blueviolet; */
-    width: 10rem;
-  }
    
  
