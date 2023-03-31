@@ -264,3 +264,11 @@ body{background-image:url(https://d39uo3k0liehyo.cloudfront.net/roadmap-v2/image
   .contenedor .boton:nth-child(5):hover span{
 	color: #333;
   }
+
+  /* owl content styles */
+  .category-title {
+	border: 2px solid black;
+  }
+  .item {
+	width: 10rem;
+  }
