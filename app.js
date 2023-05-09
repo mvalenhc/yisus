@@ -12,6 +12,6 @@ app.set("view engine", "ejs");
 app.use("/", require("./router"));
 
 //* Servidor 
-app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT || 9999, () => {
   console.log(`Server in http://localhost:${process.env.PORT}`);
 });

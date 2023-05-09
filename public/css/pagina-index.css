@@ -82,6 +82,7 @@ body {
   font-family: "Josefin Sans", sans-serif;
   font-size: 30px;
   text-decoration: solid white;
+  color: blanchedalmond;
 }
 .non-semantic-protector {
   position: relative;
@@ -92,14 +93,16 @@ body {
   background-color: #79b4b7;
   font-family: "Josefin Sans", sans-serif;
   font-size: 30px;
+  color: #000000;
   margin: 5px;
-  text-decoration: solid white;
+
 }
 .texto2 {
   padding-top: 50px;
   position: relative;
   font-family: "Josefin Sans", sans-serif;
   font-size: 30px;
+  color: blanchedalmond;
 }
 .resena {
   padding-top: 10vh;

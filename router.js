@@ -25,6 +25,18 @@ router.get('/pagina', (req, res) => {
 router.get('/confirm', (req, res) => {
     res.render('confirm.ejs')
 });
+// vista perfil de usuario
+router.get('/peril', (req, res) => {
+    res.render('peril.ejs')
+});
+// vista para la pagina por genero
+router.get('/Pagina_individual', (req, res) => {
+    res.render('Pagina_individual.ejs')
+});
+// vista para el prestamo
+router.get('/prestamo', (req, res) => {
+    res.render('prestamo.ejs')
+});
 
 // Ruta por defecto al ingresar una ruta desconocida
 router.use((req, res) => {

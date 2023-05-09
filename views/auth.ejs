@@ -11,7 +11,7 @@
 
     <!--* Boostrap  -->
     <%- include('./partials/boostrap.ejs') %>
-        <title>Document</title>
+        <title>confirmación</title>
 </head>
 
 <body>
@@ -20,18 +20,20 @@
             <header class="img1">
                 <img src="/assets/img/auth-user.png">
             </header>
+            <form action="d" method="post">
             <section class="texto1">
                 Autenticacion para la confirmación del prestamo
             </section>
-            <section class="input-group mb-3">
-                <input type="text" class="form-control-lg" placeholder="Correo Electronico"
-                    aria-label="Recipient's username" aria-describedby="button-addon2">
+            <section class="input-group mb-3" >
+                <input type="email" class="form-control-lg" placeholder="Correo Electronico" 
+                    aria-label="Recipient's username" aria-describedby="button-addon2" required>
             </section>
             <section class="input-group mb-3">
                 <input type="password" class="form-control-lg" placeholder="Contraseña"
-                    aria-label="Recipient's username" aria-describedby="button-addon2">
+                    aria-label="Recipient's username" aria-describedby="button-addon2" required>
             </section>
-            <button type="button" class="btn" id="boton">Confirmar</button>
+            <button type="button" class="btn" id="boton"><a href="/prestamo">Confirmar</a> </button>
+        </form>
         </article>
     </main>
 </body>
