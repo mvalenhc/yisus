@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es"  data-theme="dracula">
 
 <head>
   <meta charset="UTF-8">
@@ -46,9 +46,22 @@
         <h1 class="ribbon"><strong class="ribbon-content">Reseña</strong></h1>
       </section>
 
-      <section class="non-semantic-protector">
-        <!-- ribbons and other content in here -->
-        <button type="button" class="btn btn-lg " id="boton"> <a href="/confirm">Prestamo</a> </button>
+      <section class="non-semantic-protector pt-4">
+      <!-- The button to open modal -->
+<label for="my-modal-3" class="btn btn-info w-2/5 ">Prestamo</label>
+
+<!-- Put this part before </body> tag -->
+<input type="checkbox" id="my-modal-3" class="modal-toggle" />
+<div class="modal">
+  <div class="modal-box relative">
+    <label for="my-modal-3" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+    <h3 class="text-lg font-bold text-white">Seguro?</h3>
+    <p class="py-4 text-white" >¿Estas seguro de solicitar el prestamo del libro?</p>
+    <div class="modal-action">
+      <a href="/auth" class="btn">Confirmar</a>
+     </div>
+  </div>
+</div>
       </section>
 
       <p class="texto2">Orgullo y prejuicio narra las aventuras y desventuras amorosas de las hermanas Bennet,
