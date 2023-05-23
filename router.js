@@ -37,7 +37,14 @@ router.get('/Pagina_individual', (req, res) => {
 router.get('/prestamo', (req, res) => {
     res.render('prestamo.ejs')
 });
-
+//vista para el formulario para agregar libros
+router.get('/agregarlibros', (req, res) => {
+    res.render('agregarlibros.ejs')
+});
+//vista para el formulario la devolucion de libros
+router.get('/devolucion', (req, res) => {
+    res.render('devolucion.ejs')
+});
 // Ruta por defecto al ingresar una ruta desconocida
 router.use((req, res) => {
     res.send(`<h1> Page not found </h1>`);

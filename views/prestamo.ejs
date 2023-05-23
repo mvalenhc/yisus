@@ -5,14 +5,14 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <!-- boostrap -->
   <%- include('./partials/boostrap') %>
-  <!-- olw Carousel -->
-  <%- include('./partials/owl.ejs') %>
-  <!-- css style -->
-  <link rel="stylesheet" href="/assets/css/pagina-style.css">
-  <link rel="stylesheet" href="/assets/css/pagina-index.css">
+    <!-- olw Carousel -->
+    <%- include('./partials/owl.ejs') %>
+      <!-- css style -->
+      <link rel="stylesheet" href="/assets/css/pagina-style.css">
+      <link rel="stylesheet" href="/assets/css/pagina-index.css">
 
       <title>Prestamo</title>
 </head>
@@ -37,49 +37,55 @@
       </section>
     </article>
 
-    <article class="col-sm-6 col-md-8" id="medio">
+    <article class="col-sm-6 col-md-8 pt-7" id="medio">
       <section class="resena">
         <form action="sd" method="post">
           <label for="" class="texto1"> Lugar del prestamo
-            <input type="text " placeholder="Type here" class="input input-bordered input-lg w-full max-w-xs"  required/>
+            <input type="text " placeholder="Type here" class="input input-bordered input-lg w-full max-w-xs"
+              required />
           </label>
           <label for="" class="texto1"> Genero
-            <input type="text " placeholder="Type here" class="input input-bordered input-lg w-full max-w-xs"  required/>
+            <input type="text " placeholder="Type here" class="input input-bordered input-lg w-full max-w-xs"
+              required />
           </label>
-         </form>
-         <form action="sd" method="post">
+        </form>
+        <form action="sd" method="post">
           <label for="" class="texto1"> Nombre y Apellidos
-            <input type="text " placeholder="Type here" class="input input-bordered input-lg w-full max-w-xs"  required/>
+            <input type="text " placeholder="Type here" class="input input-bordered input-lg w-full max-w-xs"
+              required />
           </label>
           <label for="" class="texto1"> Correo electronico
-            <input type="text " placeholder="Type here" class="input input-bordered input-lg w-full max-w-xs"  required/>
+            <input type="text " placeholder="Type here" class="input input-bordered input-lg w-full max-w-xs"
+              required />
           </label>
-         </form>
-         <form action="ad" method="post">
+        </form>
+        <form action="ad" method="post">
           <label for="" class="texto1"> Lugar del prestamo
-            <input type="text " placeholder="Type here" class="input input-bordered input-lg w-full max-w-xs"  required/>
+            <input type="text " placeholder="Type here" class="input input-bordered input-lg w-full max-w-xs"
+              required />
           </label>
           <label for="" class="texto1"> Numero de Telefono
-            <input type="text " placeholder="Type here" class="input input-bordered input-lg w-full max-w-xs"  required/>
+            <input type="text " placeholder="Type here" class="input input-bordered input-lg w-full max-w-xs"
+              required />
           </label>
-          <label for="" class="texto1"> Acepto Terminos Y condiciones
-            <input type="checkbox"  class="checkbox checkbox-accent" />
+          <label for="" class="texto1 pt-7"> Acepto Terminos Y condiciones
+            <input type="checkbox" class="checkbox checkbox-accent" />
           </label>
-          <button class="btn btn-block"><a href="/">ENVIAR</a> </button>
-   
-         </form>
-      
+          <button class="btn btn-block btn-info"><a href="/">ENVIAR</a> </button>
+
+        </form>
+
       </section>
-        <!-- ribbons and other content in here -->
-      
+      <!-- ribbons and other content in here -->
 
 
-      
+
+
   </main>
 
   <!-- Script para el carrousel -->
   <script src="/assets/js/owl-function.js"></script>
-  
+
   <footer>
     <%- include('./partials/footer.ejs') %>
   </footer>
