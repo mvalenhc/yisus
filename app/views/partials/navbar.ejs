@@ -1,0 +1,45 @@
+
+<head>
+  <script>
+    function nav(value) {
+      if(value !=""){location.href =value;}
+    }
+  </script>
+</head>
+<div class="navbar bg-base-100">
+  <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+    <div class="w-10 rounded-full">
+      <img src="/assets/img/ole.png" />
+    </div>
+  </label>
+  <div class="flex-1">
+    <a class="btn btn-ghost normal-case text-xl" href="/">Biblioteca Genesis</a>
+  </div>
+  <div class="flex-1">
+    <select class="select select-info w-full max-w-xs" onchange="nav(this.value)">
+      <option disabled selected>Genero</option>
+      <option value="/Pagina_individual">Literatura Clasica</option>
+      <option>Terror</option>
+      <option>Misterio</option>
+    </select>
+  </div>
+  <div class="flex-none gap-2">
+      <input type="text" placeholder="Search" class="input input-bordered text-white" />
+    <div class="dropdown dropdown-end">
+      <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+        <div class="w-10 rounded-full">
+          <img src="/assets/img/jjj.png" />
+        </div>
+      </label>
+      <ul tabindex="0" class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
+        <li>
+          <a class="justify-between text-white" href="/user/perfil">
+            Perfil
+          </a>
+        </li>
+        <!-- <li><a>Settings</a></li>
+        <li><a>Logout</a></li> -->
+      </ul>
+    </div>
+  </div>
+</div>
