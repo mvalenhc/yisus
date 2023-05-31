@@ -38,8 +38,8 @@ app.use('/admin', admin)
 app.use('/libro', book)
 
 // Ruta por defecto al ingresar una ruta desconocida
-// home.use((req, res) => {
-//     res.send(`<h1> Ruta desconocida </h1>`);
-// });
+app.use((req, res) => {
+    res.render('404.ejs')
+});
 
 export default app;
