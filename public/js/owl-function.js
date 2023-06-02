@@ -1,8 +1,19 @@
 // activacion de la libreria
 $('.owl-carousel').owlCarousel({
-    loop: true,
-    margin: 15,
-    autoWidth: true,
+    // loop: true,
+    navigation : true, // Show next and prev buttons
+        slideSpeed : 300,
+        paginationSpeed : 400,
+        singleItem:true,
+        // // Navigation
+        // navigationText : ["Anterior","Siguiente"],
+        // rewindNav : true,
+        // scrollPerPage : true,
+        //Pagination
+        pagination : true,
+        paginationNumbers: false,
+        margin: 15,
+        autoWidth: true,
 
     // nav: true,
     responsive: {
@@ -16,4 +27,4 @@ $('.owl-carousel').owlCarousel({
         items: 6
       }
     }
-  });
+    });

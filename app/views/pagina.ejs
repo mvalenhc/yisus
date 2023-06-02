@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="es"  data-theme="dracula">
+<html lang="es" data-theme="dracula">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <!-- boostrap -->
   <%- include('./partials/boostrap') %>
-  <!-- olw Carousel -->
-  <%- include('./partials/owl.ejs') %>
-  <!-- css style -->
-  <link rel="stylesheet" href="/assets/css/pagina-style.css">
-  <link rel="stylesheet" href="/assets/css/pagina-index.css">
+    <!-- olw Carousel -->
+    <%- include('./partials/owl.ejs') %>
+      <!-- css style -->
+      <link rel="stylesheet" href="/assets/css/pagina-style.css">
+      <link rel="stylesheet" href="/assets/css/pagina-index.css">
 
       <title>Pagina Individual</title>
 </head>
@@ -47,21 +47,11 @@
       </section>
 
       <section class="non-semantic-protector pt-4">
-      <!-- The button to open modal -->
-<label for="my-modal-3" class="btn btn-info w-2/5 ">Prestamo</label>
+        <!-- The button to open modal -->
+        <label for="my-modal-3" class="btn btn-info w-2/5 ">Prestamo</label>
 
-<!-- Put this part before </body> tag -->
-<input type="checkbox" id="my-modal-3" class="modal-toggle" />
-<div class="modal">
-  <div class="modal-box relative">
-    <label for="my-modal-3" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-    <h3 class="text-lg font-bold text-white">Seguro?</h3>
-    <p class="py-4 text-white" >¿Estas seguro de solicitar el prestamo del libro?</p>
-    <div class="modal-action">
-      <a href="/libro/auth" class="btn">Confirmar</a>
-     </div>
-  </div>
-</div>
+
+
       </section>
 
       <p class="texto2">Orgullo y prejuicio narra las aventuras y desventuras amorosas de las hermanas Bennet,
@@ -118,17 +108,36 @@
               class="img-thumbnail" alt="book-name"></a>
           <figcaption class="figure-caption">La sociedad literaria y el paste de piel de patata de Guernsey</figcaption>
         </figure>
+
+        <figure class="item text-center">
+          <a href="#"><img src="/assets/IMG/La sociedad literaria y el pastel de piel de patata de Guernsey.jpg"
+              class="img-thumbnail" alt="book-name"></a>
+          <figcaption class="figure-caption">La sociedad literaria y el paste de piel de patata de Guernsey</figcaption>
+        </figure>
       </article>
+      <!-- Put this part before </body> tag -->
+      <input type="checkbox" id="my-modal-3" class="modal-toggle" />
+      <div class="modal">
+        <div class="modal-box relative">
+          <label for="my-modal-3" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+          <h3 class="text-lg font-bold text-white">Seguro?</h3>
+          <p class="py-4 text-white">¿Estas seguro de solicitar el prestamo del libro?</p>
+          <div class="modal-action">
+            <a href="/libro/auth" class="btn">Confirmar</a>
+          </div>
+        </div>
+      </div>
+      </main>
     </main>
 
-  </main>
 
-  <!-- Script para el carrousel -->
-  <script src="/assets/js/owl-function.js"></script>
-  
-  <footer>
-    <%- include('./partials/footer.ejs') %>
-  </footer>
+
+    <!-- Script para el carrousel -->
+    <script src="/assets/js/owl-function.js"></script>
+
+    <footer>
+      <%- include('./partials/footer.ejs') %>
+    </footer>
 
 </body>
 

@@ -133,3 +133,13 @@ body {
 .item {
   width: 10rem;
 }
+.img-thumbnail {
+  width: 100%;
+  height: 250px !important;
+  border-top-left-radius: calc(0.25rem - 1px);
+  border-top-right-radius: calc(0.25rem - 1px);
+}
+.figure-caption{
+  color:azure;
+  size: 20px;
+}
