@@ -27,15 +27,15 @@
         </h1>
       </article>
 
+      <!-- forEach con componente de libros -->
       <article class="owl-carousel">
-        <!-- forEach con componente de libros -->
         <% libros.forEach(LIBRO => { %>
           <figure class="item text-center">
 
             <% if (LIBRO.IMAGEN) { %>
-              <a href="/libro/pagina?<%= LIBRO.COD_LIBRO %>"><img src="data:image/jpeg;base64,<%= LIBRO.IMAGEN %>" class="img-thumbnail" alt="<%= LIBRO.TITULO %>"></a>
+              <a href="/libro/pagina?COD_LIBRO=<%= LIBRO.COD_LIBRO %>"><img src="data:image/jpeg;base64,<%= LIBRO.IMAGEN %>" class="img-thumbnail" alt="<%= LIBRO.TITULO %>"></a>
             <% } else { %>
-              <a href="/libro/pagina?<%= LIBRO.COD_LIBRO %>"><img src="/assets/img/literatura_clasica/Alicia-en-el-pais-de-las-maravillas.jpg"
+              <a href="/libro/pagina?COD_LIBRO=<%= LIBRO.COD_LIBRO %>"><img src="/assets/img/literatura_clasica/Alicia-en-el-pais-de-las-maravillas.jpg"
                 class="img-thumbnail" alt="<%= LIBRO.TITULO %>"></a>             
             <% } %>
             

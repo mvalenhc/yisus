@@ -2,8 +2,21 @@ import { Router } from "express";
 const book = Router();
 
 // vista para la pagina individual
-book.get("/pagina", (req, res) => {
-  res.render("pagina.ejs");
+book.get("/pagina", async (req, res) => {
+  let COD_LIBRO = req.query.COD_LIBRO;
+
+  let url = `http://localhost:3000/api/books/${COD_LIBRO}`;
+  let options = { method: "GET" };
+  let infoLibro = {}
+  let result = await fetch(url, options)
+    .then((respuesta) => respuesta.json())
+    .then((data) => infoLibro = data[0])
+    .catch((err) => { console.log(err) })
+
+  console.log(COD_LIBRO);
+  console.log(infoLibro);
+
+res.render("pagina.ejs",{infoLibro: infoLibro});
 });
 
 // vista autentificacion de prestamo
