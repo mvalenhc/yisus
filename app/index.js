@@ -1,9 +1,9 @@
-import app from './app.js'
+import app from "./app.js";
 
-app.listen(app.get('port'), () => {
+app.listen(app.get("port"), () => {
   console.table({
-    MESSAGE: 'Ejecutando...',
-    PORT: app.get('port'),
-    URL: `http://localhost:${app.get('port')}`,
-  })
-})
+    MESSAGE: "Ejecutando...",
+    PORT: app.get("port"),
+    URL: `http://localhost:${app.get("port")}`,
+  });
+});
