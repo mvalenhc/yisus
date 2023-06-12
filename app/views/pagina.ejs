@@ -30,28 +30,26 @@
 
       <section class="ribbon1">
         <section class="texto">
-          <p class="nombre"></p> NOMBRE: <br>
-          <p class="nombre"> Orgullo y Prejuicio</p> AUTOR: <br>
-          <p class="nombre"> Jane Austen</p> <br>
+          <p class="nombre">NOMBRE:</p> 
+          <p class="nombre"> <%= infoLibro.TITULO %> </p> 
+          AUTOR: <br>
+          <p class="nombre"> <%= infoLibro.COD_AUTOR %></p> <br>
         </section>
       </section>
     </article>
 
     <article class="col-sm-6 col-md-8" id="medio">
       <section class="resena">
-        <p class="texto1">Orgullo y prejuicio de Jane Austen, el pasado 28 de enero de 2020 cumplió 207 años de
-          su publicación, la famosa novela de Jane Austen, considerada una de las primeras comedias románticas
-          de la historia, un clásico que no pierde vigencia y aún hoy, fascina a todos los lectores</p>
+        <p class="texto1">
+          <%= infoLibro.SINOPSIS %>
+        </p>
 
-        <h1 class="ribbon"><strong class="ribbon-content">Reseña</strong></h1>
+        <h1 class="ribbon"><strong class="ribbon-content">Sinopsis</strong></h1>
       </section>
 
       <section class="non-semantic-protector pt-4">
         <!-- The button to open modal -->
         <label for="my-modal-3" class="btn btn-info w-2/5 ">Prestamo</label>
-
-
-
       </section>
 
       <p class="texto2">Orgullo y prejuicio narra las aventuras y desventuras amorosas de las hermanas Bennet,

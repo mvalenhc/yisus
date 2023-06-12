@@ -1,3 +1,4 @@
+
 import { Router } from 'express'
 import  jwt  from 'jsonwebtoken';
 import dotenv from 'dotenv';
@@ -59,8 +60,6 @@ login.get('/login', (req, res) => {
     } catch (error) {
         res.redirect("/")
     }
-
-
 
 });
 

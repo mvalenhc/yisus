@@ -27,58 +27,23 @@
         </h1>
       </article>
 
+      <!-- forEach con componente de libros -->
       <article class="owl-carousel">
-        <figure class="item text-center">
-          <a href="/libro/pagina"><img src="/assets/img/100añosdesoledad.jpg" class="img-thumbnail" alt="book-name"></a>
-          <figcaption class="figure-caption">100 Años de Soledad</figcaption>
-        </figure>
+        <% libros.forEach(LIBRO => { %>
+          <figure class="item text-center">
 
-        <figure class="item text-center">
-          <a href="/libro/pagina"><img src="/assets/img/atlantis.png" class="img-thumbnail" alt="book-name"></a>
-          <figcaption class="figure-caption">Atlantis: Proyecto tarsis</figcaption>
-        </figure>
-
-        <figure class="item text-center">
-          <a href="/libro/pagina"><img src="/assets/img/norte-ysur.jpg" class="img-thumbnail" alt="book-name"></a>
-          <figcaption class="figure-caption">Norte y Sur</figcaption>
-        </figure>
-
-        <figure class="item text-center">
-          <a href="/libro/pagina"><img src="/assets/img/lasciva.png" class="img-thumbnail" alt="book-name"></a>
-          <figcaption class="figure-caption">Lasciva</figcaption>
-        </figure>
-
-        <figure class="item text-center">
-          <a href="/libro/pagina"><img src="/assets/img/naranja-mecanica.png" class="img-thumbnail" alt="book-name"></a>
-          <figcaption class="figure-caption">La naranja mecanica</figcaption>
-        </figure>
-
-        <figure class="item text-center">
-          <a href="/libro/pagina"><img src="/assets/img/campo-de-la-novela-en-colombia-el.jpg" class="img-thumbnail"
-              alt="book-name"></a>
-          <figcaption class="figure-caption">Campo de la novela en colombia</figcaption>
-        </figure>
-
-        <figure class="item text-center">
-          <a href="/libro/pagina"><img src="/assets/img/jane-eyre-portada-bonita.jpg" class="img-thumbnail"
-              alt="book-name"></a>
-          <figcaption class="figure-caption">Jane Eyre</figcaption>
-        </figure>
-
-        <figure class="item text-center">
-          <a href="/libro/pagina"><img src="/assets/img/literatura española.webp" class="img-thumbnail" alt="book-name"></a>
-          <figcaption class="figure-caption">Literatura Española</figcaption>
-        </figure>
-
-        <figure class="item text-center">
-          <a href="/libro/pagina"><img src="/assets/img/Valancy Stirling o el castillo azul.jpg" class="img-thumbnail"
-              alt="book-name"></a>
-          <figcaption class="figure-caption">Valancy Stirling o el castillo azul</figcaption>
-        </figure>
-        <figure class="item text-center">
-          <a href="/libro/pagina"><img src="/assets/img/100añosdesoledad.jpg" class="img-thumbnail" alt="book-name"></a>
-          <figcaption class="figure-caption">100 Años de Soledad</figcaption>
-        </figure>
+            <% if (LIBRO.IMAGEN) { %>
+              <a href="/libro/pagina?COD_LIBRO=<%= LIBRO.COD_LIBRO %>"><img src="data:image/jpeg;base64,<%= LIBRO.IMAGEN %>" class="img-thumbnail" alt="<%= LIBRO.TITULO %>"></a>
+            <% } else { %>
+              <a href="/libro/pagina?COD_LIBRO=<%= LIBRO.COD_LIBRO %>"><img src="/assets/img/literatura_clasica/Alicia-en-el-pais-de-las-maravillas.jpg"
+                class="img-thumbnail" alt="<%= LIBRO.TITULO %>"></a>             
+            <% } %>
+            
+            <figcaption class="figure-caption">
+              <%= LIBRO.TITULO %>
+            </figcaption>
+          </figure>
+          <% }) %>
       </article>
 
       <article class="resenas">
