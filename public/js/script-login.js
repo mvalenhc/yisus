@@ -1,53 +1,95 @@
+/* Declaración de el formualario completo  */
+let username = document.getElementById('username');
+let formulario = document.getElementById('formulario');
+let password = document.getElementById('password');
+let email = document.getElementById('email');
+const inputs = document.querySelectorAll('#formulario input');
+
+
+//Declaracion de expresiones regulares
+const Expresiones = {
+    usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
+    password: /^.{4,12}$/, // 4 a 12 digitos.
+    correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,// Letras, guion bajo caracteres especiales. 
+}
+
+
+const campos = {
+    usuario: false,
+    password: false,
+    correo: false
+}
+
+//aqui hacemos la validación de los campos 
+
+const validarFormulario = (e) => {
+    switch (e.target.name) {
+        case "usuario":
+            validarFormulario(Expresiones.usuario, e.target, 'usuario');
+            break;
+        case "correo":
+            validarCampo(Expresiones.correo, e.target, 'correo');
+            break;
+        case "password":
+            validarCampo(expresiones.password, e.target, 'password');
+            validarpassword2();
+            break;
+        case "password2":
+            validarpassword2();
+            break;
+    }
+
+};
+
+
+
+
 function setFormMessage(formElement, type, message) {
-    const messageElement = formElement.querySelector(".form__message");
+    const messageElement = formElement.querySelector(".formulario-mensaje");
 
     messageElement.textContent = message;
-    messageElement.classList.remove("form__message--success", "form__message--error");
-    messageElement.classList.add(`form__message--${type}`);
+    messageElement.classList.remove("formulario-mensaje-success", "formulario-mensaje-error");
+    messageElement.classList.add(`formulario-mensaje-${type}`);
 }
 
 function setInputError(inputElement, message) {
-    inputElement.classList.add("form__input--error");
-    inputElement.parentElement.querySelector(".form__input-error-message").textContent = message;
+    inputElement.classList.add("formulario-input-error");
+    inputElement.parentElement.querySelector(".formulario-input-error-mensaje").textContent = message;
 }
 
 function clearInputError(inputElement) {
-    inputElement.classList.remove("form__input--error");
-    inputElement.parentElement.querySelector(".form__input-error-message").textContent = "";
+    inputElement.classList.remove("formulario-input-error");
+    inputElement.parentElement.querySelector(".formulario-input-error-mensaje").textContent = "";
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    const loginForm = document.querySelector("#login");
+    const formulario = document.querySelector("#login");
     const createAccountForm = document.querySelector("#createAccount");
 
     document.querySelector("#linkCreateAccount").addEventListener("click", e => {
         e.preventDefault();
-        loginForm.classList.add("form--hidden");
-        createAccountForm.classList.remove("form--hidden");
+        formulario.classList.add("formulario-hidden");
+        createAccountForm.classList.remove("formulario-hidden");
     });
 
     document.querySelector("#linkLogin").addEventListener("click", e => {
         e.preventDefault();
-        loginForm.classList.remove("form--hidden");
-        createAccountForm.classList.add("form--hidden");
+        createAccountForm.classList.add("formulario-hidden");
+        formulario.classList.remove("formulario-hidden");
     });
 
-    loginForm.addEventListener("submit", e => {
+    formulario.addEventListener("submit", (e) => {
         e.preventDefault();
 
-       
-
-        setFormMessage(loginForm, "error", "Invalid username/password combination");
+        // Perform your AJAX/Fetch login
+        setFormMessage(formulario, "error", `Usuario incorrecto y/o contraseña incorrecta.`);
     });
 
-    document.querySelectorAll(".form__input").forEach(inputElement => {
-        inputElement.addEventListener("blur", e => {
-            if (e.target.id === "signupUsername" && e.target.value.length > 0 && e.target.value.length < 10) {
-                setInputError(inputElement, "Username must be at least 10 characters in length");
-            }
-        });
+    inputs.forEach(inputElement => {
+        inputElement.addEventListener("keyup", validarFormulario);
+        inputElement.addEventListener("blur", validarFormulario);
 
-        inputElement.addEventListener("input", e => {
+        inputElement.addEventListener("input", (e) => {
             clearInputError(inputElement);
         });
     });

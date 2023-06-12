@@ -11,4 +11,8 @@ home.get('/genero', (req, res) => {
   res.render('pagina-genero.ejs')
 });
 
+
+
+
+
 export default home;
