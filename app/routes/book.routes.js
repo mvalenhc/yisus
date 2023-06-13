@@ -1,4 +1,5 @@
 import { Router } from "express";
+import fetch from "node-fetch";
 const book = Router();
 
 // vista para la pagina individual
@@ -12,9 +13,6 @@ book.get("/pagina", async (req, res) => {
     .then((respuesta) => respuesta.json())
     .then((data) => infoLibro = data[0])
     .catch((err) => { console.log(err) })
-
-  console.log(COD_LIBRO);
-  console.log(infoLibro);
 
 res.render("pagina.ejs",{infoLibro: infoLibro});
 });

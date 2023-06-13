@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { Buffer } from "node:buffer";
+import fetch from "node-fetch";
 const home = Router();
 
 // Vista principal de la pagina
