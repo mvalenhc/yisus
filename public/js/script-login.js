@@ -44,53 +44,53 @@ const validarFormulario = (e) => {
 
 
 
-function setFormMessage(formElement, type, message) {
-    const messageElement = formElement.querySelector(".formulario-mensaje");
+// function setFormMessage(formElement, type, message) {
+//     const messageElement = formElement.querySelector(".formulario-mensaje");
 
-    messageElement.textContent = message;
-    messageElement.classList.remove("formulario-mensaje-success", "formulario-mensaje-error");
-    messageElement.classList.add(`formulario-mensaje-${type}`);
-}
+//     messageElement.textContent = message;
+//     messageElement.classList.remove("formulario-mensaje-success", "formulario-mensaje-error");
+//     messageElement.classList.add(`formulario-mensaje-${type}`);
+// }
 
-function setInputError(inputElement, message) {
-    inputElement.classList.add("formulario-input-error");
-    inputElement.parentElement.querySelector(".formulario-input-error-mensaje").textContent = message;
-}
+// function setInputError(inputElement, message) {
+//     inputElement.classList.add("formulario-input-error");
+//     inputElement.parentElement.querySelector(".formulario-input-error-mensaje").textContent = message;
+// }
 
-function clearInputError(inputElement) {
-    inputElement.classList.remove("formulario-input-error");
-    inputElement.parentElement.querySelector(".formulario-input-error-mensaje").textContent = "";
-}
+// function clearInputError(inputElement) {
+//     inputElement.classList.remove("formulario-input-error");
+//     inputElement.parentElement.querySelector(".formulario-input-error-mensaje").textContent = "";
+// }
 
-document.addEventListener("DOMContentLoaded", () => {
-    const formulario = document.querySelector("#login");
-    const createAccountForm = document.querySelector("#createAccount");
+// document.addEventListener("DOMContentLoaded", () => {
+//     const formulario = document.querySelector("#login");
+//     const createAccountForm = document.querySelector("#createAccount");
 
-    document.querySelector("#linkCreateAccount").addEventListener("click", e => {
-        e.preventDefault();
-        formulario.classList.add("formulario-hidden");
-        createAccountForm.classList.remove("formulario-hidden");
-    });
+//     document.querySelector("#linkCreateAccount").addEventListener("click", e => {
+//         e.preventDefault();
+//         formulario.classList.add("formulario-hidden");
+//         createAccountForm.classList.remove("formulario-hidden");
+//     });
 
-    document.querySelector("#linkLogin").addEventListener("click", e => {
-        e.preventDefault();
-        createAccountForm.classList.add("formulario-hidden");
-        formulario.classList.remove("formulario-hidden");
-    });
+//     document.querySelector("#linkLogin").addEventListener("click", e => {
+//         e.preventDefault();
+//         createAccountForm.classList.add("formulario-hidden");
+//         formulario.classList.remove("formulario-hidden");
+//     });
 
-    formulario.addEventListener("submit", (e) => {
-        e.preventDefault();
+//     formulario.addEventListener("submit", (e) => {
+//         e.preventDefault();
 
-        // Perform your AJAX/Fetch login
-        setFormMessage(formulario, "error", `Usuario incorrecto y/o contraseña incorrecta.`);
-    });
+//         // Perform your AJAX/Fetch login
+//         setFormMessage(formulario, "error", `Usuario incorrecto y/o contraseña incorrecta.`);
+//     });
 
-    inputs.forEach(inputElement => {
-        inputElement.addEventListener("keyup", validarFormulario);
-        inputElement.addEventListener("blur", validarFormulario);
+//     inputs.forEach(inputElement => {
+//         inputElement.addEventListener("keyup", validarFormulario);
+//         inputElement.addEventListener("blur", validarFormulario);
 
-        inputElement.addEventListener("input", (e) => {
-            clearInputError(inputElement);
-        });
-    });
-});
+//         inputElement.addEventListener("input", (e) => {
+//             clearInputError(inputElement);
+//         });
+//     });
+// });
