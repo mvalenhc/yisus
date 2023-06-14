@@ -1,21 +1,9 @@
 import { Router } from "express";
-import fetch from "node-fetch";
+import { bookController } from "../controllers/book.controller.js";
 const book = Router();
 
 // vista para la pagina individual
-book.get("/pagina", async (req, res) => {
-  let COD_LIBRO = req.query.COD_LIBRO;
-
-  let url = `http://localhost:3000/api/books/${COD_LIBRO}`;
-  let options = { method: "GET" };
-  let infoLibro = {}
-  let result = await fetch(url, options)
-    .then((respuesta) => respuesta.json())
-    .then((data) => infoLibro = data[0])
-    .catch((err) => { console.log(err) })
-
-res.render("pagina.ejs",{infoLibro: infoLibro});
-});
+book.get("/pagina",bookController.infoLibro);
 
 // vista autentificacion de prestamo
 book.get("/auth", (req, res) => {
