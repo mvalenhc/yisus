@@ -4,30 +4,42 @@ dotenv.config()
 
 const authentication = async (req, res) => {
     let COD_USUARIO = req.query.COD_USUARIO // 1020402543
-    let password = req.query.PASSWORD // 962012d09b8170d912f0669f6d7d9d07
-    try {
+    let CONTRASEÑA = req.query.PASSWORD // 962012d09b8170d912f0669f6d7d9d07
 
-        let url = `http://localhost:3000/api/user/${COD_USUARIO}`;
-        let options = { method: "GET" };
-        let datosUsuario = {};
+    if (COD_USUARIO && CONTRASEÑA) {
+        try {
 
-        await fetch(url, options)
-        .then((response) => response.json())
-        .then(data => datosUsuario = data)
+            console.log(typeof(COD_USUARIO), typeof(CONTRASEÑA))
 
-        // res.render('?');
-        // const payload = {
-        //   correo: email,
-        //   contraseña: contraseña
-        // }
+            let url = `http://localhost:3000/api/user/${COD_USUARIO}`;
+            let options = { method: "GET" };
+            let payload = {};
 
-        // const token = jwt.sign(payload.porcess.env.SECRECT_KEY, { "ExpiresIn": process.env.EXPIRE_TOKEN });
+            // Con la variable COD_USUARIO realizamos uan busqueda en la api para obtener los datos del usuario
+            // En caso de no existir, se redirecciona al login nuevamente
+            await fetch(url, options)
+                .then((response) => response.json())
+                .then(datosUsuario => !datosUsuario.message ? payload = datosUsuario[0] : res.redirect('/login'))
 
-        // res.cookie("cookieGB", token);
-        res.send(datosUsuario);
-    } catch (error) {
-        console.error(error)
+            if (CONTRASEÑA === payload.CONTRASEÑA) {
+                // creamos una variable token donde mandamos como primer parametro los datos a encriptar y luego la secret key con la cual se desencriptará
+                const token = jwt.sign(payload, process.env.SECRET_KEY, {
+                    expiresIn: process.env.EXPIRE_TOKEN,
+                })
+
+                res.cookie('cookieBG', token)
+                res.redirect('/user/perfil')
+            } else {
+                res.redirect('/login')
+            }
+
+        } catch (error) {
+            console.error(error)
+        }
+    } else {
+        res.redirect('/login')
     }
+
 }
 
 export const loginController = {
