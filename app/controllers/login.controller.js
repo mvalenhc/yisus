@@ -1,7 +1,5 @@
 import jwt from "jsonwebtoken";
 import fetch from "node-fetch";
-import dotenv from "dotenv";
-dotenv.config();
 
 const authentication = async (req, res) => {
   let COD_USUARIO = req.query.COD_USUARIO; // 1020402543
@@ -18,11 +16,11 @@ const authentication = async (req, res) => {
       // En caso de no existir, se redirecciona al login nuevamente
       await fetch(url, options)
         .then((response) => response.json())
-        .then((datosUsuario) => !datosUsuario.message ? (payload = datosUsuario[0]) : res.redirect("/login"));
+        .then((datosUsuario) => datosUsuario.message ? res.redirect("/login?error=1") : (payload = datosUsuario[0]));
 
-        // creamos una variable token donde mandamos como primer parametro los datos a encriptar y luego la secret key con la cual se desencriptará
+      // creamos una variable token donde mandamos como primer parametro los datos a encriptar y luego la secret key con la cual se desencriptará
       if (CONTRASEÑA === payload.CONTRASEÑA) {
-        
+
         const token = jwt.sign(payload, process.env.SECRET_KEY, {
           expiresIn: process.env.EXPIRE_TOKEN,
         });
@@ -30,16 +28,49 @@ const authentication = async (req, res) => {
         res.cookie("cookieBG", token);
         res.redirect("/user/perfil");
       } else {
-        res.redirect("/login");
+        res.redirect("/login?error=2");
       }
     } catch (error) {
       console.error(error);
     }
   } else {
-    res.redirect("/login");
+    res.redirect("/login?error=0");
   }
 };
 
+const render = async (req, res) => {
+
+  let errorCase = req.query.error
+  // let errorMessage = {}
+  if (errorCase) {
+    switch (errorCase) {
+      // sin datos en el formulario
+      case "0":
+        res.render("login",{errorCase:errorCase})
+        // res.render("login")
+        break;
+
+      // Usuario no existente
+      case "1":
+        res.render("login",{errorCase:errorCase})
+        break;
+
+      // Contraseña incorrecta  
+      case "2":
+        res.render("login",{errorCase:errorCase})
+        break;
+
+      default:
+        res.render("login",{errorCase:errorCase})
+        break;
+    }
+  } else {
+    res.render("login",{errorCase:errorCase})
+  }
+
+}
+
 export const loginController = {
   authentication,
+  render
 };
