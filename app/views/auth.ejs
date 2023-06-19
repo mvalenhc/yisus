@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es"  data-theme="dracula">
+<html lang="es" data-theme="dracula">
 
 <head>
     <meta charset="UTF-8">
@@ -18,22 +18,27 @@
     <main class="container">
         <article class="top">
             <header class="img1">
+                <!-- Imagen de usuario -->
                 <img src="/assets/img/auth-user.png">
             </header>
             <form action="d" method="post">
-            <section class="texto1">
-                Autenticacion para la confirmación del prestamo
-            </section>
-            <section class="input-group mb-3" >
-                <input type="email" class="form-control-lg" placeholder="Correo Electronico" 
-                    aria-label="Recipient's username" aria-describedby="button-addon2" required>
-            </section>
-            <section class="input-group mb-3">
-                <input type="password" class="form-control-lg" placeholder="Contraseña"
-                    aria-label="Recipient's username" aria-describedby="button-addon2" required>
-            </section>
-            <button type="button" class="btn" id="boton"><a href="/libro/prestamo">Confirmar</a> </button>
-        </form>
+                <section class="texto1">
+                    <!-- Título o texto descriptivo -->
+                    Autenticación para la confirmación del préstamo
+                </section>
+                <section class="input-group mb-3">
+                    <!-- Campo de entrada de correo electrónico -->
+                    <input type="email" class="form-control-lg" placeholder="Correo Electrónico"
+                        aria-label="Correo Electrónico" aria-describedby="button-addon2" required>
+                </section>
+                <section class="input-group mb-3">
+                    <!-- Campo de entrada de contraseña -->
+                    <input type="password" class="form-control-lg" placeholder="Contraseña" aria-label="Contraseña"
+                        aria-describedby="button-addon2" required>
+                </section>
+                <!-- Botón para confirmar el préstamo -->
+                <button type="button" class="btn" id="boton"><a href="/libro/prestamo">Confirmar</a></button>
+            </form>
         </article>
     </main>
 </body>

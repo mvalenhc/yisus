@@ -2,81 +2,97 @@
 <html lang="es" data-theme="dracula">
 
 <head>
+  <!-- Configuración del documento -->
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Estilos CSS -->
   <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="stylesheet" href="/assets/css/agrgarlibros.css">
+
+  <!-- Icono de la página -->
   <link rel="shortcut icon" href="/assets/img/ole.png" type="image/x-icon">
 
-
-
-  <!-- boostrap -->
+  <!-- Bootstrap -->
   <%- include('./partials/boostrap') %>
-    <title>Devolucion</title>
+
+  <!-- Título de la página -->
+  <title>Devolucion</title>
 </head>
+
+<!-- Encabezado de la página -->
 <header>
   <%- include('./partials/navbar.ejs') %>
 </header>
 
+
 <body>
+  <!-- Contenedor principal -->
   <div class="row no-gutters">
+    <!-- Columna izquierda -->
     <div class="col-3 col-md-2">
       <div class="cuadrado">
         <img src="/assets/IMG/ORGULLO-NEGRET.jpg" class="imagen">
       </div>
     </div>
+
+    <!-- Columna derecha -->
     <div class="col flex space-x-4 " id="col">
       <article class="col-sm-6 col-md-8" id="medio">
         <section class="resena">
+          <!-- Formulario 1 -->
           <form action="sd" method="post">
             <label for="" class="texto1">
-              <p class=" text-white ">Nombre del libro</p>
-              <input type="text " placeholder="Type here"
+              <p class="text-white">Nombre del libro</p>
+              <input type="text" placeholder="Type here"
                 class="input input-bordered input-lg w-full max-w-xs text-white" required />
             </label>
             <label for="" class="texto1 pl-5 pt-5">
-              <p class=" text-white ">Genero</p>
-              <input type="text " placeholder="Type here"
+              <p class="text-white">Género</p>
+              <input type="text" placeholder="Type here"
                 class="input input-bordered input-lg w-full max-w-xs text-white" required />
             </label>
           </form>
+
+          <!-- Formulario 2 -->
           <form action="sd" method="post">
             <label for="" class="texto1">
-              <p class=" text-white ">Numero de Telefono</p>
-              <input type="tel" placeholder="Type here"
-                class="input input-bordered input-lg w-full max-w-xs text-white" required />
+              <p class="text-white">Número de Teléfono</p>
+              <input type="tel" placeholder="Type here" class="input input-bordered input-lg w-full max-w-xs text-white"
+                required />
             </label>
             <label for="" class="texto1 pl-5">
-              <p class=" text-white ">Año de publicacion</p>
+              <p class="text-white">Año de publicación</p>
               <input type="date" placeholder="Type here"
                 class="input input-bordered input-lg w-full max-w-xs text-white" required />
             </label>
           </form>
+
+          <!-- Formulario 3 -->
           <form action="ad" method="post">
             <label for="" class="texto1">
-              <p class=" text-white ">Autor</p>
+              <p class="text-white">Autor</p>
               <input type="text" placeholder="Type here"
                 class="input input-bordered input-lg w-full max-w-xs text-white" required />
             </label>
             <label for="" class="texto1 pl-5">
-              <p class=" text-white ">Fecha de prestamo</p>
+              <p class="text-white">Fecha de préstamo</p>
               <input type="date" placeholder="Type here"
                 class="input input-bordered input-lg w-full max-w-xs text-white" required />
             </label>
             <label for="" class="texto1">
-              <p class=" text-white ">Fecha de Devolucion</p>
+              <p class="text-white">Fecha de devolución</p>
               <input type="date" placeholder="Type here"
                 class="input input-bordered input-lg w-full max-w-xs text-white" required />
             </label>
             <label for="" class="texto1">
-              <p class=" text-white ">Esta Retrasado</p>
+              <p class="text-white">Está retrasado</p>
               <input type="text" placeholder="Type here"
                 class="input input-bordered input-lg w-full max-w-xs text-white" required />
             </label>
-              <button class="btn btn-block btn-info mt-6"><a href="/">Guardar</a> </button>
-              <button class="btn btn-block btn-info"><a href="/">Cancelar</a> </button>
-
+            <button class="btn btn-block btn-info mt-6"><a href="/">Guardar</a> </button>
+            <button class="btn btn-block btn-info"><a href="/">Cancelar</a> </button>
           </form>
 
         </section>
@@ -84,9 +100,9 @@
     </div>
   </div>
 
+  <!-- Pie de página -->
   <footer>
     <%- include('./partials/footer.ejs') %>
   </footer>
 </body>
-
 </html>

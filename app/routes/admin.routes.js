@@ -15,5 +15,17 @@ admin.get("/agregar", (req, res) => {
 admin.get("/devolucion", (req, res) => {
   res.render("devolucion.ejs");
 });
+//vista de usuarios para administration
+admin.get("/usuarios", (req, res) => {
+  res.render("dashusuarios.ejs");
+});
+//vista de los libros para administration
+admin.get("/libros", (req, res) => {
+  res.render("dashlibros.ejs");
+});
+//vista de los prestamos para administration
+admin.get("/prestamos", (req, res) => {
+  res.render("dashprestamos.ejs");
+});
 
 export default admin;

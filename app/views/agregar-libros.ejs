@@ -24,61 +24,70 @@
         <img src="/assets/IMG/ORGULLO-NEGRET.jpg" class="imagen">
       </div>
     </div>
-    <div class="col flex space-x-4 " id="col">
+    <div class="col flex space-x-4" id="col">
       <article class="col-sm-6 col-md-8" id="medio">
         <section class="resena">
           <form action="sd" method="post">
+            <!-- Etiqueta y campo de entrada para el nombre del libro -->
             <label for="" class="texto1">
-              <p class=" text-white ">Nombre del libro</p>
-              <input type="text " placeholder="Type here"
+              <p class="text-white">Nombre del libro</p>
+              <input type="text" placeholder="Escribe aquí"
                 class="input input-bordered input-lg w-full max-w-xs text-white" required />
             </label>
+            <!-- Etiqueta y campo de entrada para el género del libro -->
             <label for="" class="texto1 pl-5 pt-5">
-              <p class=" text-white ">Genero</p>
-              <input type="text " placeholder="Type here"
+              <p class="text-white">Género</p>
+              <input type="text" placeholder="Escribe aquí"
                 class="input input-bordered input-lg w-full max-w-xs text-white" required />
             </label>
           </form>
           <form action="sd" method="post">
+            <!-- Etiqueta y campo de entrada para la editorial del libro -->
             <label for="" class="texto1">
-              <p class=" text-white ">Editorial</p>
-              <input type="text " placeholder="Type here"
+              <p class="text-white">Editorial</p>
+              <input type="text" placeholder="Escribe aquí"
                 class="input input-bordered input-lg w-full max-w-xs text-white" required />
             </label>
+            <!-- Etiqueta y campo de entrada para el año de publicación del libro -->
             <label for="" class="texto1 pl-5">
-              <p class=" text-white ">Año de publicacion</p>
-              <input type="text " placeholder="Type here"
+              <p class="text-white">Año de publicación</p>
+              <input type="text" placeholder="Escribe aquí"
                 class="input input-bordered input-lg w-full max-w-xs text-white" required />
             </label>
           </form>
           <form action="ad" method="post">
+            <!-- Etiqueta y campo de entrada para la cantidad del libro -->
             <label for="" class="texto1">
-              <p class=" text-white ">Cantidad</p>
-              <input type="number " placeholder="Type here"
+              <p class="text-white">Cantidad</p>
+              <input type="number" placeholder="Escribe aquí"
                 class="input input-bordered input-lg w-full max-w-xs text-white" required />
             </label>
+            <!-- Etiqueta y campo de entrada para el autor del libro -->
             <label for="" class="texto1 pl-5">
-              <p class=" text-white ">Autor</p>
-              <input type="text " placeholder="Type here"
+              <p class="text-white">Autor</p>
+              <input type="text" placeholder="Escribe aquí"
                 class="input input-bordered input-lg w-full max-w-xs text-white" required />
             </label>
+            <!-- Etiqueta y checkbox para indicar si el libro tiene continuación -->
             <label for="" class="texto1 pr-6 pt-3">
-              <p class=" text-white">Tiene continuacion</p>
-              <p class="texto1 text-white ">Si<input type="checkbox" class="checkbox checkbox-accent pr-2" /></p>
+              <p class="text-white">Tiene continuación</p>
+              <p class="texto1 text-white">Si<input type="checkbox" class="checkbox checkbox-accent pr-2" /></p>
             </label>
+            <!-- Etiqueta y checkbox para indicar si el libro no tiene continuación -->
             <label for="" class="texto1 pt-3">
-              <p class="texto1 text-white ">No<input type="checkbox" class="checkbox checkbox-accent pr-2" /></p>
+              <p class="texto1 text-white">No<input type="checkbox" class="checkbox checkbox-accent pr-2" /></p>
             </label>
-            <button class="btn btn-block btn-info pr-5"><a href="/">Guardar</a> </button>
-            <button class="btn btn-block btn-info"><a href="/">Cancelar</a> </button>
+            <!-- Botón para guardar los datos del formulario -->
+            <button class="btn btn-block btn-info pr-5"><a href="/">Guardar</a></button>
+            <!-- Botón para cancelar y regresar -->
+            <button class="btn btn-block btn-info"><a href="/">Cancelar</a></button>
           </form>
-
         </section>
       </article>
-    </div>
+    </div>    
   </div>
-
   <footer>
+    <!-- se incluyo el footer -->
     <%- include('./partials/footer.ejs') %>
   </footer>
 </body>
